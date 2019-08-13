@@ -11,7 +11,7 @@ GPIO.setwarnings(True)
 GPIO.setmode(GPIO.BCM)
 
 #read data using pin 4
-instance = dht11.DHT11(pin=4)
+instance = dht11.DHT11(pin=17)
 
 #set path and name for log files
 path = "/home/pi/Desktop/log/dht11.log"
@@ -35,7 +35,7 @@ try:
                 #send output to shell
                 print("Time " + str(datetime.datetime.now()) + " Temperature: %d F " % ((result.temperature*9/5)+32) + "Humidity: %-3.1f%%"% (result.humidity))
                         
-            time.sleep(1)
+            time.sleep(30)
 
 except KeyboardInterrupt:
     print("Cleanup")
